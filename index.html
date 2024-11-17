@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gwen Stefani 25th anniversary</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    
 </head>
 <body>
-    <header></header>
-    <main>
-        <h2>GX</h2>
+    <header>
         <nav>
+            <h2><a href="#">GX</a></h2>
             <ul>
                 <li><a href="index.html">home</a></li>
                 <li><a href="#">tour</a></li>
@@ -21,10 +21,117 @@
                 <li><a href="#">sign in</a></li>
             </ul>
         </nav>
+    </header>
+    <main>
+        <section id="cover">
+            <img src="images/bouquet4.png" width="500px">
+            <div id="title-holder">
+                <span id="title" class="tilt cursive">Gwen Stefani</span>
+                <span id="year" class="tilt cursive">25th</span>
+            </div>
+        </section>
+        <section id="sp-offer">
+            <span id="lamb-sp-album"></span>
+            <div id="lamb-sp">
+                <span id="lamb-sp-title">Love. Music. angel. baby.</span>
+                <span id="lamb-sp-subtitle">--------- 25th anniversary edition vinyl ---------</span>
+                <p>Gwen Stefani's solo debut album has come to its 20th anniversary since its first epic release. The album she came out with a solo artist apart from her ska-punk/rock band, No Doubt, features with the hit number “Hollaback Girl,” along with million streamed songs “Rich Girl,” “Cool,” and “What You Waiting For?.”<br>Special Edition includes a exclusive pink vinyl disk.</p>
+                <span id="lamb-sp-price">$37.99</span>
+                <button class="add-to-cart" type="button">Add to Cart</button>
+            </div>
+        </section>
+        <section id="vinyls">
+            <section class="section left-section">
+                <img class="portrait left-portrait" src="images/LAMB_portrit.png" alt="">
+                <div class="content left-content">
+                    <h2>Love. Music. angel. baby.</h2>
+                    <h3>$32.99</h3>
+                    <span class="line"></span>
+                    <p>Her debut solo album, "Love. Angel. Music. Baby." (2004) embraces hip-hop, rock, and electronic influences with collaborators like Pharrell, and André 3000. Hits like “Hollaback Girl” and “Rich Girl” highlight her unique fusion of past and present genres.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>    
+                <img class="album left-album" src="images/LAMB_album.png" alt="" />
+                <span class="number left-number">1</span>
+            </section>
+            <section class="section right-section">
+                <img class="portrait right-portrait" src="images/SE_portrait.png" alt="" />
+                <div class="content right-content">
+                    <h2>The sweet escape</h2>
+                    <h3>$32.99</h3>
+                    <span class="line"></span>
+                    <p>Her second album, ”The Sweet Escape”  (2006) opening with “Wind It Up,” indicates her music era has entered into a more playful sound. In the ballad, “Wonderful Life,” Stefani explores fresh styles while solidifying her pop versatility.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>  
+                <img class="album right-album" src="images/TheSweetEscape_album.png" alt="" />  
+                <span class="number right-number right-number-align">2</span>
+            </section>
+            <section class="section left-section">
+                <img class="portrait left-portrait" src="images/TWTFL_portrait.png" alt="">
+                <div class="content left-content">
+                    <h2>This is what the truth feels like</h2>
+                    <h3>$32.99</h3>
+                    <span class="line"></span>
+                    <p>Her third album is led by "Make Me Like You" and other hit songs such as "Used to Love You" and "Misery." The album is inspired by the end of her marriage and newly found romance.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>    
+                <img class="album left-album" src="images/TWTFL_album.png" alt="" />
+                <span class="number left-number left-number-align ">3</span>
+            </section>
+            <section class="section right-section">
+                <img class="portrait right-portrait" src="images/bouquet_portrait.png" alt="">
+                <div class="content right-content" width="420px">
+                    <h2>Bouquet</h2>
+                    <h3>$32.99</h3>
+                    <span class="line"></span>
+                    <p>Her latest album, "Bouquet," includes her newest singles, "Somebody Else's." In the song "Purple Irises," she duets with her partner, Blake Shelton. After she explored country and holiday music, this album is meant to represent her return to pop music.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <img class="album right-album" src="images/Bouquet_album.png" alt="" />
+                <span class="number right-number right-number-align">4</span>
+            </section>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form>
+                <div>
+                    <input type="text" id="fName" name="fName" placeholder="Gwen">
+                    <label for="fName" >First Name</label>
+                </div>
+                <div>
+                    <input type="text" id="lName" name="lName" placeholder="Stefani">
+                    <label for="lName" >Last Name</label>
+                </div>
+                <fieldset>
+                    <legend>
+                        Choose your Preferred Contact Method: 
+                    </legend>
+                    <div class="radio-setter">     
+                        <input type="radio" id="phone-pref" name="pref-contact" checked>
+                        <label for="pref-contact">Phone</label>    
+                    </div>
+                    <div class="radio-setter">
+                        <input type="radio" id="email-pref" name="pref-contact">
+                        <label for="pref-contact">Email</label>
+                    </div>
+                </fieldset>
+                <div>
+                    <input type="number" id="number" name="Phone Number" placeholder="000 (321) 1234">
+                    <label for="number">Phone</label>
+                </div>
+                <div>
+                    <input type="email" id="email" name="Email Address" placeholder="gwenOfficial@gmail.com">
+                    <label for="email">Email</label>
+                </div>
+                <div id="comments">
+                    <label for="comments">Comments</label>
+                    <textarea id="comments" name="commnets" placeholder='Gwen Says "Hi!"'></textarea>
+                </div>
+                <input type="submit" id="submit">
+            </form>
+        </section>
     </main>
-    <section id="cover">
-        <span id="title"></span>
-    </section>
-    <footer></footer>
+    <footer>
+        <p>&copy; Gwen Stefani</p>
+    </footer>
 </body>
 </html>

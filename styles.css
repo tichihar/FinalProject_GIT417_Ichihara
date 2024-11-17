@@ -1,5 +1,476 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Judson:ital,wght@0,400;0,700;1,400&family=Lavishly+Yours&display=swap');
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/*--- Universal Styles ---*/
+:root {
+    --black: #0E0A09;
+    --white: #FFF8EC;
+    --cream: #FFF3DF;
+    --lt-pink: #FEEDDA;
+    --lt-brown: #86421F;
+    --brown: #642601;
+    --dk-brown: #51230B;
+    --green: #8BAB5F;
+    --yellow: #F4C774;
+}
+
+
+/*--- Font Styles ---*/
+/* Color */
+header h2, a {
+    color: var(--black);
+}
+.number, #submit {
+    color: var(--brown);
+}
+#title, #year, h2, h3, p, label, legend{
+    color: var(--dk-brown)
+}
+footer * {
+    color: var(--white);
+}
+
+/* Typography */
+p, button, .number, input[type="number"], ::placeholder, textarea {
+    font-family: 'Inria Serif', Arial;
+}
+h2, a, label, #submit {
+    font-family: 'Judson', serif;
+}
+.cursive {
+    font-family: 'Lavishly Yours', serif;
+}
+
+/* Font-size */
+h2, h2 > a {
+    font-size: 48px;
+}
+h3 {
+    font-size: 24px;
+}
+#submit {
+    font-size: 20px;
+}
+p, a, button, label, legend, ::placeholder, textarea{
+    font-size: 16px;
+}
+#title, #year {
+    font-size: 180px;
+}
+#year{
+    font-size: 170px;
+    line-height: 1.3;
+}
+.number {
+    font-size: 750px;
+    line-height: 0.78;
+}
+
+
+/* Other Styling */
+html, textarea {
+    line-height: 1.2;
+    letter-spacing: .05rem;
+}
+h2, button, h3 {
+    letter-spacing: 2.5px;
+}
+a, button, h3 {
+    text-transform: uppercase;
+    text-decoration: none;
+}
+p, label {
+    line-height: 1.2;
+    letter-spacing: 2px;
+}
+.add-to-cart {
+    font-weight: bold;
+}
+
+/* #sp-offer */
+#lamb-sp, #lamb-sp p {
+    color: var(--cream);
+    text-align: center;
+}
+#lamb-sp-title, #lamb-sp-subtitle {
+    font-family: 'Judson', serif;
+    text-transform: uppercase;
+}
+#lamb-sp-title {
+    font-size: 64px;
+    letter-spacing: 10px;
+}
+#lamb-sp-subtitle {
+    letter-spacing: 3px;
+}
+#lamb-sp-price {
+    font-size: 36px;
+    letter-spacing: 2px;
+}
+
+
+
+/*--- Styles ---*/
 body {
     width: 1280px;
-    background-color: #FFF8EC;
+    background-color: var(--white);
     margin: 0 auto;
+    overflow-x: hidden;
+}
+
+/*- header -*/
+header {
+    background-color: var(--cream)
+}
+nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+    align-items: center;
+}
+nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+nav li {
+    display: inline-block;
+    padding: 0 5px;
+    z-index: 2;
+}
+
+/*- main -*/
+.add-to-cart {
+    width: 240px;
+    height: 55px;
+    background-color: var(--yellow);
+    border-radius: 2rem / 2rem;
+    border: unset;
+}
+
+/* #cover */
+#cover {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background-image: url(images/bouquet.png);
+    background-position: -21vw;
+    background-size: 80%;
+}
+#cover img {
+    transform: translateX(-110px);
+}
+#title-holder {
+    transform: rotate(30deg) translateX(-120px) translatey(30px);
+    /*rotate this in JS*/
+    padding-top: 200px;
+    display: inline-block;
+}
+#title{
+    text-wrap: nowrap;
+}
+#year {
+    padding-left: 320px;
+}
+
+/* #special_offer */
+#sp-offer {
+    background-color: var(--brown);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 600px;
+}
+#lamb-sp-album {
+    overflow: hidden;
+}
+#lamb-sp-album::before {
+    content:url('images/LAMB_album.png');
+    transform: rotate(-15deg) translateX(-97px) translatey(10px) scale(85%);
+    display: inline-block;
+}
+#lamb-sp {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    padding: 50px 10px 10px 0;
+    margin-left: 10px;
+    width: 90%;
+}
+#lamb-sp-subtitle {
+    margin-top: 5px;
+  }  
+#lamb-sp > p:nth-child(3) {
+    margin-top: 65px;
+  }
+#lamb-sp-price {
+    margin-top: 60px;
+}
+#lamb-sp > button {
+    margin-top: 10px;
+}
+ 
+
+/*vinyls*/
+#vinyls{
+    margin: 15rem 0;
+    background-image: url("images/bouquet.png");
+    background-size: 80%;
+}
+.section {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position: relative;
+    align-items: end;
+    gap: 15px;
+    margin: 15vh 0;
+    /* place-content: center; test if this is working */
+}
+.section::after {
+    position: absolute;
+    content: " ";
+    height: 70%;
+    top: 175px;
+    background-color: var(--lt-pink);
+    width: calc(100% - 5vw);
+    z-index: -1;
+    border-radius: 1rem / 1.5rem;
+    border-left: .8rem solid var(--green);
+    border-right: .8rem solid var(--green);
+}
+.portrait{
+    width: 425px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 30px;
+    gap: 15px;
+    width: 350px;
+}
+.content p {
+    text-wrap: stable;
+}
+.line {
+    border: .5px solid var(--dk-brown);
+    width: 100%;
+}
+.album {
+    padding-bottom: 60px;
+    width: 300px;
+}
+.number {
+    z-index:-2;
+}
+
+/* .left-section */
+.left-section {
+    transform: translateX(-4vw);
+}
+.left-portrait {
+    grid-column: 1/3;
+}
+.left-content {
+    grid-column: 3/6;
+}
+.left-album {
+    grid-column: 6/9;
+    margin-left: 2vw;
+}
+.left-number {
+    grid-column: 9/12;
+}
+.left-number-align {
+    transform: translateX(-7vw)
+}
+
+/* .right-section */
+.right-section {
+    transform: translateX(150px);
+}
+.right-portrait {
+    grid-column: 9/12;
+}
+.right-content {
+    grid-column: 6/9;
+    margin-left: 2vw;
+}
+.right-album {
+    grid-column: 3/6;
+}
+.right-number {
+    grid-column: 1/3;
+}
+.right-number-align {
+    transform: translateX(-22vw);
+}
+.right-content, .right-album, .right-number{
+    grid-row: 1;
+}
+
+/* form */
+#contact {
+    margin: 15rem auto;
+    padding: 5rem 0;
+    background-color: var(--lt-pink);
+}
+#contact > h2 {
+    text-align: center;
+}
+form {
+    margin: 2.5rem auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 55%;
+    gap: 1.5rem;
+}
+form div {
+    display: inline-flex;
+    flex-direction: column-reverse;
+}
+form div > input {
+    all: unset;
+    height: 3rem;
+    padding-left: .5rem;
+    border-bottom: .5px solid var(--brown);
+    background-color: var(--cream);
+}
+fieldset {
+    grid-column: 1/3;
+    padding-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: .5px solid var(--brown);
+}
+legend {
+    margin: 2rem 0;
+}
+input[type="radio"] {
+    appearance: none;
+    background-color: var(--yellow);
+    padding-left: unset;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: .05rem solid var(--dk-brown);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+input[type="radio"]::before {
+    content: "";
+    width: .65rem;
+    height: .65rem;
+    border-radius: 50%;
+    transform: scale(0);
+    background-color: var(--brown);
+}
+input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+.radio-setter {
+    display:inline-grid;
+    grid-template-columns: 2.5rem auto;
+    align-items: center
+}
+input[type="text"], input[type="email"]{
+    display: block;
+}
+input[type="email"] {
+    grid-column: 1 / 3;
+    width: 100%;
+}
+input[type="submit"] {
+    margin: 2rem auto;
+    grid-column: 1/3;
+    text-align: center;
+    width: 15rem;
+    height: 3rem;
+    background-color: var(--white);
+    border: .1rem solid var(--brown);
+}
+#comments {
+    grid-column: 1/3;
+    display: inline-grid;
+    grid-template-columns: 1fr;
+}
+#comments label {
+    grid-row: 1/2;
+}
+textarea {
+    border: .5px solid var(--dk-brown);
+    background: var(--cream);
+    resize: unset;
+    padding: .5rem;
+    height: 11rem;
+}
+
+/*--- Footer ---*/
+footer {
+    height: 5rem;
+    background: var(--brown);
+    text-align: center;
+    padding: 2rem;
+}
+
+/*--- Hover ---*/
+a:hover {
+    color: var(--lt-brown);
+}
+li > a:hover {
+    text-decoration: underline;
+}
+
+/*--- Click ---*/
+a:active {
+    color: var(--dk-brown);
 }
